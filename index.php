@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     <div class="container">
         <h1 class="text-center">Signup to our website</h1>
-        <form action="/loginsystem/signup.php" method='post'>
+        <form action="/loginsystem/index.php" method='post'>
           <div class="mb-3">
             <label for="username" class="form-label">Username</label>
             <input type="text" maxlength="11" class="form-control" id="username" name="username" aria-describedby="emailHelp">
