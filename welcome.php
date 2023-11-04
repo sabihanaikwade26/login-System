@@ -19,8 +19,8 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     <?php require 'partials/nav.php' ?>
     <div class="container">
     <div class="alert alert-success" role="alert">
-  <h4 class="alert-heading">Welcome - <?php echo $_SESSION['username']; ?></h4>
-  <p>hey, how are you doing?cWelcome to isecure. You can logged in as <?php echo $_SESSION['username']; ?></p>
+  <h4 class="alert-heading">Welcome - <?php echo $_SESSION['username'];?></h4>
+  <p>hey, how are you doing? Welcome to isecure. You can logged in as <?php echo $_SESSION['username']; ?></p>
   <hr>
   <p class="mb-0">Whenever you need to, be sure to logout <a href="/loginSystem/logout.php" > using this link.</a></p>
 </div>

@@ -67,15 +67,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form action="/loginsystem/signup.php" method='post'>
           <div class="mb-3">
             <label for="username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">
+            <input type="text" maxlength="11" class="form-control" id="username" name="username" aria-describedby="emailHelp">
          </div>
          <div class="mb-3">
            <label for="password" class="form-label">Password</label>
-           <input type="password" class="form-control" id="password" name="password">
+           <input type="password" maxlength="11" class="form-control" id="password" name="password">
          </div>
          <div class="mb-3">
            <label for="cpassword" class="form-label">Confirm Password</label>
-           <input type="password" class="form-control" id="cpassword" name="cpassword">
+           <input type="password" maxlength="11" class="form-control" id="cpassword" name="cpassword">
            <div id="emailHelp" class="form-text">Make sure to type the same password</div>
          </div>
          <button type="submit" class="btn btn-primary">Signup</button>
