@@ -6,18 +6,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-      $sql = "Select * from `user` where username='$username' AND password='$password'";
+      $sql = "Select * from `user` where username='$username'";
       $result = mysqli_query($conn, $sql);
       $num=mysqli_num_rows($result);
       if($num==1){
-        $login=true;
-        session_start();
-        $_SESSION['loggedin']=true;
-        $_SESSION['username']=$username;
-        header("location:welcome.php");
-      }else
+        while($row=mysqli_fetch_assoc($result)){
+          if(password_verify($password,$row['password'])){
+            $login=true;
+            session_start();
+            $_SESSION['loggedin']=true;
+            $_SESSION['username']=$username;
+            header("location:welcome.php"); 
+          }
+          {
+            $showError="The password you entered is incorrect. Please check your password and try again.";
+          }
+        }
+      }
+      else
       {
-        $showError="Invalid Credentials";
+        $showError="The username you entered does not exist. Please check your password and try again.";
       }
 }
 

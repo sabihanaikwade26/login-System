@@ -15,7 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     else{
       if (($password == $cpassword)) {
-        $sql = "INSERT INTO `user` (`username`, `password`, `date`) VALUES ('$username', '$password', current_timestamp())";
+        $hash=password_hash($password, PASSWORD_DEFAULT);
+        $sql = "INSERT INTO `user` (`username`, `password`, `date`) VALUES ('$username', '$hash', current_timestamp())";
         $result = mysqli_query($conn, $sql);
         if ($result) {
             $showAlert = true;
